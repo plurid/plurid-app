@@ -1,0 +1,14 @@
+{
+    "name": "app",
+    "version": "0.0.0",
+    "description": "a Node.js plurid.app",
+    "author": "",
+    "license": "UNLICENSED",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "express": "^4.17.3"
+    }
+}

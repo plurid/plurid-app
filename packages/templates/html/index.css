@@ -1,0 +1,9 @@
+html, body {
+    margin: 0;
+    font-family: Ubuntu;
+    background: black;
+    color: white;
+    display: grid;
+    place-content: center;
+    height: 100%;
+}
