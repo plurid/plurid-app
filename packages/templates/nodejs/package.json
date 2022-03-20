@@ -6,6 +6,7 @@
     "license": "UNLICENSED",
     "main": "app.js",
     "scripts": {
+        "build": "echo optional build step",
         "start": "node app.js"
     },
     "dependencies": {
