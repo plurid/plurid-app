@@ -1,8 +1,19 @@
-use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
+use actix_web::{
+    get,
+    post,
+    web,
+    App,
+    HttpResponse,
+    HttpServer,
+    Responder,
+};
 
+use std::net::{
+    IpAddr,
+    Ipv4Addr,
+    SocketAddr,
+};
 
-
-static PORT: i8 = 8080;
 
 
 #[get("/")]
@@ -22,9 +33,15 @@ async fn manual_hello() -> impl Responder {
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    println!(
-        format!("starting server on {}", PORT),
+    let socket: SocketAddr = SocketAddr::new(
+        IpAddr::V4(
+            Ipv4Addr::new(127, 0, 0, 1),
+        ),
+        8080,
     );
+
+    let port = socket.port();
+    println!("starting server on {}", port);
 
     HttpServer::new(|| {
         App::new()
@@ -32,7 +49,7 @@ async fn main() -> std::io::Result<()> {
             .service(echo)
             .route("/hey", web::get().to(manual_hello))
     })
-    .bind(("0.0.0.0", 8080))?
+    .bind((socket.ip(), port))?
     .run()
     .await
 }
