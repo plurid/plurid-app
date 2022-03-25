@@ -37,12 +37,13 @@ A plurid.app can be a simple static HTML or a web server application.
 
 Templates:
 
-+ HTML
-+ Deno
-+ Go
-+ Node.js
-+ Python
-+ Rust
++ HTML - static/JAMstack website/application · entrypoint `index.html`;
++ Deno - `deno` runtime · entrypoint `app.ts`;
++ Go - `go` runtime · entrypoint `app.go`;
++ Node.js - `nodejs` runtime · entrypoint `app.js`;
++ Python - `python` runtime · entrypoint `app.py`;
++ Rust - `rust` runtime · entrypoint `src/main.rs`;
++ Docker - custom imagene with custom entrypoint.
 
 
 
